@@ -1,2 +1,9 @@
-<h1>Employees#show</h1>
-<p>Find me in app/views/demployees/show.html.erb</p>
+<h1>Employees</h1>
+
+<p><%= @employee.first_name+" "+@employee.last_name%></p>
+<p><%= @employee.alias%></p>
+<p><%= @employee.title%></p>
+<p><%= @employee.office%></p>
+<img src="<%= @employee.img_url%>" alt="<%= @employee.img_url%>">
+<h2>My Dog</h2>
+<%= @employee.dog.name %>

@@ -1,5 +1,13 @@
 <h1>Dogs</h1>
+
+<%max_employees = @dogs.max_by do |dog_instance| 
+        dog_instance.employees.count  
+    end%>
+
 <% @dogs.each do |dog_instance| %>
     <div><%= link_to dog_instance.name, dog_path(dog_instance.id) %></div>
 <% end %>
+
+<div><%= button_to "Sort the employees by the number of dogs that belong to them", dogs_path(max_employees)%></div>
+
 
