@@ -3,6 +3,9 @@
 <p>Age: <%= @dog.age %></p>
 <h2>My Employees</h2>
 <% @dog.employees.each do |employee| %>
-    <div><%= "#{employee.first_name + " " + employee.last_name}" %></div>
+    <div><%= link_to employee.full_name, employee_path(employee) %></div>
 <% end %>
+<br>
+<p><%= link_to "Back to Dogs", dogs_path %></p>
+
 

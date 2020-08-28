@@ -1,8 +1,9 @@
 <h1>Employees</h1>
 
 
-<% @employees.each do |employee_instance| %>
-    <div><%= link_to employee_instance.first_name+" "+employee_instance.last_name, employee_path(employee_instance.id) %></div>
+<% @employees.each do |employee| %>
+    <div><%= link_to employee.full_name, employee_path(employee) %></div>
 <% end %>
-
+<br>
+<p><%= link_to "Create a New Employee", new_employee_path %></p>
 
