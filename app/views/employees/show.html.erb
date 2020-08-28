@@ -17,5 +17,8 @@
     <h2>I don't have a dog!</h2>
 <% end %>
 
+
+<%= link_to "delete me!", employee_path(@employee), method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
+
 <%= render "index_link" %>
 

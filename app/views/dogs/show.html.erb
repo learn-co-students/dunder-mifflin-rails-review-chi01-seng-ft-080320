@@ -16,6 +16,6 @@
 </ul>
 
 <%= link_to "edit me!", edit_dog_path(@dog) %>
-<%= link_to "delete me!", dog_path(@dog), method: :delete, data: { confirm: "Really?" } %>
+<%= link_to "delete me!", dog_path(@dog), method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
 
 <%= render "index_link" %>
