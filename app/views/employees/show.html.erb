@@ -1,0 +1,21 @@
+<h1>Employees Show Page</h1>
+
+<h1>Hi, my name is <%= @employee.name %>!</h1>
+
+<%= image_tag("#{@employee.img_url}") %>
+
+<h2>Alias: <%= @employee.alias %></h2>
+<h2>
+    I am <%= @employee.title_starts_with_vowel ? "an" : "a" %>
+    <%= @employee.title %>.
+</h2>
+<h2>I work at the <%= @employee.office %> office.</h2>
+
+<% if @employee.dog %>
+    <h2>My dog is <%= link_to @employee.dog.name, dog_path(@employee.dog) %>!</h2>
+<% else %>
+    <h2>I don't have a dog!</h2>
+<% end %>
+
+<%= render "index_link" %>
+
