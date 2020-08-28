@@ -1,0 +1,21 @@
+<h1>Dogs Show Page</h1>
+
+<h2>Hi, my name is <%= @dog.name %>!</h2>
+<h2>
+    I am <%= @dog.breed_starts_with_vowel ? "an" : "a" %>
+    <%= @dog.breed %>.
+</h2>
+
+<h2>Age: <%= @dog.age %></h2>
+
+<h3>Related Employees</h3>
+<ul>
+    <% @dog.employees.each do |emp| %>
+        <li><%= link_to emp.name, employee_path(emp) %></li>
+    <% end %>
+</ul>
+
+<%= link_to "edit me!", edit_dog_path(@dog) %>
+<%= link_to "delete me!", dog_path(@dog), method: :delete, data: { confirm: "Really?" } %>
+
+<%= render "index_link" %>
