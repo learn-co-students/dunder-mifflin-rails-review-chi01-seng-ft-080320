@@ -18,7 +18,7 @@ class EmployeesController < ApplicationController
         if @employee.save
             redirect_to employee_path(@employee)
         else
-            flash[:errors] = @employee.errors
+            flash[:errors] = @employee.errors.full_messages
             redirect_to new_employee_path
         end
     end 
@@ -29,6 +29,13 @@ class EmployeesController < ApplicationController
 
     def update
         @employee = Employee.find(params[:id])
+        @employee.update(employee_params(:first_name, :last_name, :title, :alias, :img_url, :office, :dog_id))
+        if @employee.save
+            redirect_to employee_path(@employee)
+        else
+            flash[:errors] = @employee.errors.full_messages
+            redirect_to edit_employee_path
+        end
     end 
 
     def destroy

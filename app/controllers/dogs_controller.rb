@@ -22,7 +22,7 @@ class DogsController < ApplicationController
         if @dog.save
             redirect_to dog_path(@dog)
         else
-            flash[:errors] = @dog.errors
+            flash[:errors] = @dog.errors.full_messages
             redirect_to new_dog_path
         end
     end 
@@ -37,7 +37,7 @@ class DogsController < ApplicationController
         if @dog.save
             redirect_to dog_path(@dog)
         else
-            flash[:errors] = @dog.errors
+            flash[:errors] = @dog.errors.full_messages
             redirect_to edit_dog_path
         end
     end 
