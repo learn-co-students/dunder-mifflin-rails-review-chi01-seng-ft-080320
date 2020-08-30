@@ -1,0 +1,7 @@
+<h1>Employee Index Page</h1>
+
+<% @employees.each do |employee| %>
+<p><%= link_to(employee.full_name, employee_path(employee.id)) %></p>
+<% end %>
+<br>
+<p><%= link_to "Create a New Employee",  new_employee_path %></p>
