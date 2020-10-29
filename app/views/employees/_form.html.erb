@@ -1,23 +1,39 @@
-<%= form_for @employee do |f| %>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-
-    <%= f.label :alias %>
-    <%= f.text_field :alias %>
-
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-
-    <%= f.label :office %>
-    <%= f.text_field :office %>
-
-    <%= f.label :img_url %>
-    <%= f.text_field :img_url %>
-
-    <%= f.collection_select :dog_id, @dogs, :id, :name %>
-
-    <%= f.submit %>
+<%= form_for @employee, :html => {:class => 'ui form'} do |f| %>
+    <div class="field">
+        <div class="two fields">
+            <div class="field">
+                <%= f.label :first_name %>
+                <%= f.text_field :first_name, :html => {:placeholder => 'Enter First Name'} %>
+            </div>
+            <div class="field">
+                <%= f.label :last_name %>
+                <%= f.text_field :last_name %>
+            </div>
+        </div>
+    </div>
+    <div class="field">
+        <div class="two fields">
+            <div class="field">
+                <%= f.label :alias %>
+                <%= f.text_field :alias %>
+            </div>
+            <div class="field">
+                <%= f.label :title %>
+                <%= f.text_field :title %>
+            </div>
+        </div>
+    </div>
+    <div class="field">
+        <%= f.label :office %>
+        <%= f.text_field :office %>
+    </div>
+    <div class="field">
+        <%= f.label :img_url %>
+        <%= f.text_field :img_url %>
+    </div>
+    <div class="field">
+        <%= f.label :dog_id %>
+        <%= f.collection_select :dog_id, @dogs, :id, :name, class: "ui dropdown" %>
+    </div>
+        <%= f.submit %>
 <% end %>
