@@ -6,9 +6,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
   </head>
 
   <body>
+    <div class="ui inverted segment">
+      <div class="ui inverted secondary pointing menu" >
+        <%= link_to "All Employees", employees_path, class: "item" %>
+        <%= link_to "All Dogs", dogs_path, class: "item" %>
+        <%= link_to "Create New Dog", new_dog_path, class: "item" %>
+        <%= link_to "Create New Employee", new_employee_path, class: "item" %>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
